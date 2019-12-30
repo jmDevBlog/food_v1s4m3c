@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<!-- dev.mvc.categrp.CategrpDAOInter 패키지에 등록된 interface 명시,
+      패키지명과 인터페이스명은 실제로 존재해야함,
+      Spring이 내부적으로 자동으로 interface를 구현해줌. -->
+<mapper namespace="dev.mvc.foodcategrp.FoodCategrpDAOInter"> 
+  <!-- 
+  insert: INSERT SQL 실행
+  id: Spring에서 호출시 사용
+  parameterType: 전달받는 데이터 객체
+  return: 등록한 레코드 갯수 리턴
+  SQL선언시 ';'은 삭제
+  #{}: ? 동일
+  #{name}: public String getName(){...
+   -->
+   <insert id="create" parameterType="FoodCategrpVO">           
+     INSERT INTO foodcategrp(foodcategrpno, foodname, SEQNO, VISIBLE, RDATE)
+     VALUES((SELECT NVL(MAX(foodcategrpno), 0) + 1 as foodcategrpno FROM foodcategrp),
+               #{foodname}, #{seqno}, #{visible}, sysdate)
+               
+   </insert>
+   <select id="list_foodcategrpno_asc" resultType="FoodCategrpVO">
+     SELECT foodcategrpno, foodname, seqno, visible, TO_CHAR(rdate, 'YYYY-MM-DD hh:mi:ss') as rdate, cnt      
+     FROM foodcategrp      
+     ORDER BY foodcategrpno ASC  
+   </select> 
+   
+   <select id="read" resultType="FoodCategrpVO" parameterType="int">
+     SELECT foodcategrpno, foodname, seqno, visible, rdate, cnt 
+     FROM foodcategrp
+     WHERE foodcategrpno = #{foodcategrpno}
+   </select> 
+   
+   <update id="update" parameterType="FoodCategrpVO">
+     UPDATE foodcategrp
+     SET foodname=#{foodname}, seqno=#{seqno}, visible=#{visible}
+     WHERE foodcategrpno = #{foodcategrpno}
+   </update>
+   
+   <delete id="delete" parameterType="int">
+     DELETE FROM foodcategrp
+     WHERE foodcategrpno = #{foodcategrpno}
+   </delete>
+   
+</mapper>
+
+
+
+
+

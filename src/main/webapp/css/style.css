@@ -1,0 +1,498 @@
+  /*
+  version 2.6
+  */
+  /* 모든 태그에 적용 */
+  *{
+     font-family: Malgun Gothic; 
+     font-size: 1em; 
+     margin: 0px;  /* top right bottom left */
+     padding: 0px;
+     color: #555555;
+  }  
+  
+  /*
+  .top_menu {
+    width: 100%;
+    height: 50px;
+    background-color: #EEEEEE;
+  }
+  */
+  
+  .bottom_menu {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .container {
+    width: 90%;
+    margin: 0px auto;
+  }
+
+  .content {
+    width: 100%;
+    margin: 10px auto;
+  }
+  
+  .content_bottom_menu {
+    clear: both;
+    padding-top: 20px;
+    padding-right: 20px;
+    text-align: right;
+    width: 100%;
+    background-color: white;
+  }
+    
+  .title_box {
+    color: #FFFFFF;
+    width: 20%;
+    margin: 10px auto;
+    padding: 3px;
+    background-color: #6699FF;
+    border: solid 1px #AAAAAA;
+    text-align: center;
+  }
+
+  .title_line {
+    color: #555555;
+    width: 20%;
+    margin: 20px auto;
+    padding: 3px;
+    background-color: #FFFFFF;
+    border-top: none;
+    border-right: none;
+    border-bottom: solid 5px #AAAAAA;
+    border-left: none;
+    text-align: center;
+  }
+    
+  .sub_menu {
+    text-align: right;
+    width: 100%;
+  }
+   
+  A:link{  /* 방문전 상태 */
+    text-decoration: none; /* 밑줄 삭제 */
+    color: #333333;
+  }
+
+  A:visited{  /* 방문후 상태 */
+    text-decoration: none; /* 밑줄 삭제 */
+    color: #333333;
+  }
+  
+  A:hover{  /* A 태그에 마우스가 올라간 상태 */
+    text-decoration: underline; /* 밑줄 출력 */
+    color: #7777FF;
+  }
+  
+  A:active{  /* A 태그를 클릭한 상태 */
+    text-decoration: underline; /* 밑줄 출력 */
+    color: #7777FF;
+  }
+  
+  .fieldset_basic {
+    margin-top: 10px;
+    border-top: solid 1px #AAAAAA;
+    border-right: none;
+    border-bottom: solid 1px #AAAAAA;
+    border-left: none;
+  }
+    
+  .legend_basic {
+    margin-left: 30px;
+    border: solid 1px #AAAAAA;
+    padding: 2px;
+    background-color: #A6C2FF;
+    color: #FFFFFF;
+  }  
+  
+  .ul_basic {
+    margin: 10px 30px;
+  }
+  
+  .li_none {
+    list-style: none;  /* 블렛 기호 생략 */
+    margin: 15px 10px;
+  }
+
+  .li_center {
+    text-align: center;
+    list-style: none;  /* 블렛 기호 생략 */
+    margin: 20px auto;
+  }
+  
+  .li_right {
+    text-align: right;
+    list-style: none;  /* 블렛 기호 생략 */
+    margin: 20px auto;
+    padding-right: 20px;
+  }
+  
+  /* 이미지 파일을 찾을때 style.css 파일을 기준으로 검색함. /css/images/url5.png */
+  .li_msg_success {
+    background: url(./images/url5.png) left center no-repeat;
+    line-height: 30px;
+    margin-left: 50px;
+    list-style: none;  
+    background-size: 12px;
+  }
+  
+    /* 이미지 파일을 찾을때 style.css 파일을 기준으로 검색함. /css/images/url8.png */
+  .li_msg_fail {
+    background: url(./images/url8.png) left center no-repeat;
+    line-height: 30px;
+    margin-left: 50px;
+    list-style: none;  
+    background-size: 12px;
+  }
+    
+  .table_basic {
+    border: none;
+    margin: 2px auto;
+    width: 100%;
+    border-collapse: collapse;
+  }  
+  
+  .th_basic {
+    border-top: none;
+    border-right: none;
+    border-bottom: solid 2px #CCCCCC;
+    border-left: none;
+    background-color: #EFEEFF;
+    text-align: center;
+    font-size: 0.9em;
+  }  
+    
+  .td_basic {
+    border-top: solid 1px #CCCCCC;
+    border-right: none;
+    border-bottom: solid 1px #CCCCCC;
+    border-left: none;
+    background-color: #FFFFFF;
+    text-align: center;
+
+  }  
+    
+  .td_left {
+    border-top: solid 1px #CCCCCC;
+    border-right: none;
+    border-bottom: solid 1px #CCCCCC;
+    border-left: none;
+    background-color: #FFFFFF;
+    text-align: left;
+    padding-left: 5px;
+  }  
+      
+  /* ASIDE 서브메뉴의 시작 -------------------------- */
+    .aside_menu { /* 서브 메뉴 */
+    width: 100%;
+    border: none;
+    margin: 10px auto;
+  }
+ 
+  .menu_line {
+    width: 100%;
+    border-bottom: dotted 1px #777777;
+    margin: 20px 0px 10px 0px; /* top -> right -> bottom -> left */
+    clear: both;
+  } 
+  
+  /* ASIDE 메뉴 세로 구분선 */
+  .menu_divide { /* 서브 메뉴의 세로 구분선 */
+    color: #777777;
+    font-size: 0.8em; /* 부모 글자 크기에 비해서 60%로 출력 */
+    vertical-align: 10%;  /* 0%는 bottom 기준 */
+  }
+    
+  
+  /* ASIDE 서브메뉴의 종료 -------------------------- */
+    
+ .fieldset_no_line {
+    border: none;
+    margin: 20px auto;
+  }
+  
+  .input_basic {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid 1px #AAAAAA;
+  }
+    
+  /* Top 메뉴의 시작 -------------------------- */  
+  .top_menu {
+    background-image: url('./images/top_image_FEE29B.png'); /*1440*150*/
+    background-size: 100%;
+    margin-top: 0px;
+    width: 100%;
+    height: 80px;  
+  }
+  
+  .top_menu1 {
+    color: #555555;
+    font-weight: bold;
+  }
+  
+  .top_menu_label {
+    position: relative; /* 속해있는 부모 태그 기준 설정 */
+    top: 1%;
+    left: 0.5%;
+    color: #FFFFFF;
+  }
+    
+  .top_menu_list {
+    padding-top: 0.0em;
+    position: relative;
+    top: 30%;
+    left: 0%;
+    background-color: rgba(255, 250, 255, 0.8); /* 0.8: Alpha 투명도 */
+    color: white;
+  }
+  
+  .menu_link:link{  /* 방문전 상태 */
+    text-decoration: none; /* 밑줄 삭제 */
+    color: #555555;
+  }
+
+  .menu_link:visited{  /* 방문후 상태 */
+    text-decoration: none; /* 밑줄 삭제 */
+    color: #555555;
+  }
+
+  .menu_link:hover{  /* A 태그에 마우스가 올라간 상태 */
+    text-decoration: underline; /* 밑줄 출력 */
+    color: #555555;
+    font-weight: bold;
+  }
+
+  .menu_link:active{  /* A 태그를 클릭한 상태 */
+    text-decoration: underline; /* 밑줄 출력 */
+    color: #555555;
+  }   
+  /* Top 메뉴의 종료 -------------------------- */  
+  
+  /* 메시지 출력 */
+  .message_basic {
+    width: 60%; 
+    background-color: #FFFFFF; 
+    margin: 10px auto; 
+    padding: 10px;
+    display: table-cell;
+  }
+  
+   /* Gallery 구분선 */
+   .hr_dotted {
+    width:  100%;
+    clear: both;
+    height: 1px;
+    border-top: dotted 1px #AAAAAA;
+    border-right: none;;
+    border-bottom: none;
+    border-left: none;
+    margin: 10px auto;
+  }
+
+  /* Gallery에서 하나의 이미지와 글 출력 */
+ .div_grid_img {
+    background-color: #EEEEFF;
+    float: left;
+    position: relative;
+    left: 0%;
+    margin: 0.5%;
+    padding: 0.5%;
+    width: 23%;
+    height: 220px; 
+  }
+  
+   /* div_grid_img가 적용된 CSS에서의 문자 출력 박스 */ 
+  .div_grid_text {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 100%;
+    margin: 0px 0px;
+    display: table;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    border:solid 1px #DDDDDD;
+  }
+  
+  /* div_grid_img가 적용된 CSS에서의 문자 출력 */
+  .div_grid_text_content {
+    background-color: #FFFFFF;
+    vertical-align: middle;
+    display: table-cell;
+    padding: 20px;
+    text-align: center;
+  }
+  
+   /* div_grid_img가 적용된 CSS에서의 문자 출력 박스 */ 
+  .div_grid_text2 {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 100%;
+    margin: 0px 0px;
+    display: table;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    border:solid 1px #DDDDDD;
+  }
+  
+  /* div_grid_img가 적용된 CSS에서의 문자 출력 */
+  .div_grid_text_content2 {
+    background-color: #FFFFFF;
+    vertical-align: middle;
+    display: table-cell;
+    padding: 0px;
+    text-align: center;
+  }
+    
+  
+  /* 화면 상단 메뉴 구분선 */
+  .top_menu_sep {
+    height: 1.8em;
+    color: #EEEEFF;
+    font-size: 0.8em;
+    display: inline-block; /* 크기 지정 가능, 줄바꿈 안됨 */
+    vertical-align: middle;
+    margin-left: 0.5em; 
+    background-color: rgba(255, 250, 255, 0.8);
+  }
+  
+  /* 기타 메시지 */
+  .message {
+    width: 70%;
+    border: none;
+    margin: 0px auto;
+    text-align: center;
+    background-color: #FAFAFA;
+    padding: 30px;
+    
+  }
+  
+  /* 알림 메시지 */ 
+  .span_info {
+    color: #ffffff;
+    background-color: rgba(0, 200, 0, 0.6);
+    padding: 2px;
+  }
+  
+  /* 주의 메시지 */
+  .span_alert {
+    color: #ffffff;
+    background-color: rgba(0, 0, 200, 0.6);
+    padding: 2px;
+  }
+ 
+ 
+  /* 경고 메시지 */  
+  .span_warning {
+    color: #FFFFFF;
+    background-color: rgba(255, 0, 0, 0.6);
+    padding: 2px; 
+  }
+  
+  /* 처리 성공 메시지 */
+  .span_success {
+    background: url('./images/url5.png') left center no-repeat;
+    background-size: 10px;
+    padding-top: 0px;
+    padding-left: 20px; 
+  }
+  
+  /* 처리 실패 메시지 */
+  .span_fail {
+    background: url('./images/url8.png') left center no-repeat;
+    background-size: 10px;
+    padding-top: 0px;
+    padding-left: 20px; 
+  }
+  
+  .label_basic {
+    width: 200px;
+    background-color: #6fcdfb;
+    color: #FFFFFF;
+    font-weight: normal;
+    display: inline-block; /* 한줄의 영역을 박스 영역으로 확장 표시, 박스 모양에 float='left' 적용 */
+    text-align: right;
+    padding-right: 10px;
+  }
+ 
+   /* 팝업 윈도우 1
+  <DIV id='popup' class='popup2' style='display: none;'>
+    <h2 style='color: #FFFFFF; text-decoration: underline; font-size: 1.2em;'>알림</h2>
+    <DIV id='popup_content' style='text-align: center; color: #FFFFFF; height: 200px;'></DIV>
+    <DIV style='height: 50px; text-align: center;'>[<A href="javascript: hide('popup')" class='menu_link' >CLOSE</A>]</DIV>
+  </DIV>
+  */
+  .popup1 {
+    line-height: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    width: 36%;
+    height: 300px;
+    background-color: #FF9900;
+    opacity: 0.9;
+    text-align: center;
+    color: #FFFFFF;
+  }
+  
+   /* 팝업 윈도우 2 
+  <DIV id='popup' class='popup2' style='display: none;'>
+    <h2 style='color: #FFFFFF; text-decoration: underline; font-size: 1.2em;'>알림</h2>
+    <DIV id='popup_content' style='text-align: center; color: #FFFFFF; height: 150px;'></DIV>
+    <DIV style='height: 50px; text-align: center;'>[<A href="javascript: hide('popup')" class='menu_link' >CLOSE</A>]</DIV>
+  </DIV>
+   */
+  .popup2 {
+    line-height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    width: 36%;
+    height: 250px;
+    background-color: #FF9900;
+    opacity: 0.9;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  /*
+  <DIV id='popup' class='popup3' style='display: none;'>
+    <h2 style='color: #FFFFFF; text-decoration: underline; font-size: 1.2em;'>알림</h2>
+    <DIV id='popup_content' style='text-align: center; color: #FFFFFF; height: 100px;'></DIV>
+    <DIV style='height: 50px; text-align: center;'>
+      [<A href="javascript: hide('popup'); focus();" class='menu_link' >CLOSE</A>]
+    </DIV>
+  </DIV>
+  */
+  .popup3 {
+    line-height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    width: 60%;
+    height: 200px;
+    background-color: #0099FF;
+    opacity: 0.9;
+    text-align: center;
+    color: #FFFFFF;
+  }
+  
+  .main_panel {
+    margin: 10px auto;  /* 가운데 정렬 */
+    text-align: center;
+  }
+  
+  

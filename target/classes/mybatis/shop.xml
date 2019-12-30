@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dev.mvc.shop.ShopDAOInter">
+
+  <insert id="create" parameterType="ShopVO">
+     INSERT INTO shop(shopno, 
+                  name, shopaddress, rdate, 
+                  cnt, fname, fupname, thumb1, size1, foodcategrpno)
+      VALUES((SELECT NVL(MAX(shopno), 0) + 1 as shopno FROM shop),
+                   #{name }, #{shopaddress }, sysdate, 
+                   0, #{fname}, #{fupname}, #{thumb1}, #{size1}, #{foodcategrpno })
+   </insert>
+   
+    <select id="list_all" resultType="ShopVO">
+     SELECT shopno, name, shopaddress, TO_CHAR(rdate, 'YYYY-MM-DD hh:mi:ss') as rdate, cnt, fname, fupname, thumb1, size1, foodcategrpno   
+     FROM shop
+     ORDER BY shopno ASC  
+   </select> 
+   
+   <select id="list_by_categrpno" resultType="ShopVO" parameterType="int">
+     SELECT shopno, name, shopaddress, rdate, cnt, fname, fupname, thumb1, size1, foodcategrpno
+     FROM shop
+     WHERE foodcategrpno = #{foodcategrpno}
+     ORDER BY shopno DESC
+   </select> 
+   
+   <select id="read" resultType="ShopVO" parameterType="int">
+     SELECT shopno, name, shopaddress, rdate, cnt, fname, fupname, thumb1, size1, foodcategrpno
+     FROM shop
+     WHERE shopno = #{shopno}
+   </select> 
+   
+   <update id='update' parameterType="ShopVO">
+    UPDATE shop
+    SET name=#{name }, shopaddress= #{shopaddress } 
+    WHERE shopno= #{shopno }
+   </update>
+   
+   <delete id="delete" parameterType="int">
+    DELETE FROM shop
+    WHERE shopno=#{shopno }
+   </delete>
+   
+
+
+</mapper>

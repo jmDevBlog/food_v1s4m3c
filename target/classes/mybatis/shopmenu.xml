@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dev.mvc.shopmenu.ShopmenuDAOInter">
+
+<insert id="create" parameterType="ShopmenuVO">
+INSERT INTO shopmenu(menuno, menuname, price, menuimg, upimg, thumb, fsize, shopno)
+VALUES((SELECT NVL(MAX(menuno), 0) + 1 as menuno FROM shopmenu),
+        #{menuname}, #{price}, #{menuimg}, #{upimg}, #{thumb}, #{fsize},#{shopno})
+</insert>
+
+<select id="list_by_shopno" resultType="ShopmenuVO" parameterType="int">
+ SELECT menuno, menuname, price, menuimg, upimg, thumb, fsize, shopno
+ FROM shopmenu
+ WHERE shopno = #{shopno}
+ ORDER BY menuno DESC
+</select>
+
+</mapper>

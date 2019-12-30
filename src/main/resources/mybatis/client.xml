@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "dev.mvc.client.ClientDAOInter">
+  <select id="checkId" resultType="int" parameterType="String">
+    SELECT COUNT(id) as cnt
+    FROM client
+    WHERE id=#{id}
+  </select>
+  
+  <insert id="create" parameterType="clientVO">
+    INSERT INTO client(clientno,
+                       id, passwd, cname, tel, zipcode,
+                       address1, address2, cdate)
+    VALUES ((SELECT NVL(MAX(clientno), 0)+1 as clientno FROM client),
+              #{id}, #{passwd}, #{cname}, #{tel}, #{zipcode},
+              #{address1}, #{address2}, sysdate)
+  </insert>
+  
+  <select id="list" resultType="clientVO">
+    SELECT clientno, id, passwd, cname, tel, zipcode, address1, address2, cdate
+    FROM client
+    ORDER BY clientno ASC
+  </select>
+  
+  <select id="read"  resultType="clientVO" parameterType="int">
+    SELECT clientno, id, passwd, cname, tel, zipcode, address1, address2, cdate
+    FROM client
+    WHERE clientno = #{clientno}
+  </select>
+
+  <select id="readById" resultType="clientVO" parameterType="String">
+    SELECT clientno, id, passwd, cname, tel, zipcode, address1, address2, cdate
+    FROM client
+    WHERE id = #{id}
+  </select>
+  
+  <update id="update" parameterType="clientVO">
+    UPDATE client 
+    SET cname=#{cname}, tel=#{tel}, zipcode=#{zipcode},
+          address1=#{address1}, address2=#{address2}
+    WHERE clientno=#{clientno}
+  </update>
+  
+  <select id="passwd_check" resultType="int" parameterType="HashMap">
+    SELECT COUNT(clientno) as cnt
+    FROM client
+    WHERE clientno=#{clientno} AND passwd=#{passwd}
+  </select>
+  
+  <update id="passwd_update" parameterType="HashMap">
+    UPDATE client
+    SET passwd=#{passwd}
+    WHERE clientno=#{clientno}
+  </update>
+  
+  <delete id="delete" parameterType="int">
+    DELETE FROM client
+    WHERE clientno=#{clientno}
+  </delete>
+  
+  <select id="login" resultType="int" parameterType="Map">
+    SELECT COUNT(clientno) as cnt
+    FROM client
+    WHERE id=#{id} AND passwd=#{passwd}
+  </select>
+
+
+</mapper>
