@@ -87,6 +87,40 @@
     </div>
     <!-- 두번째 라인 종료 -->
     
+    
+    <!-- 테스트 코드 -->
+    <!-- 두번째 라인 시작 -->
+    <div class="row">
+      <div class="col-md-2 col-lg-2"></div>
+      <div class="col-md-2 col-lg-2">
+        <a href='./shop/list.do?foodcategrpno=1'>
+            <img class="img-fluid" src="img/portfolio/koreanFood.png" alt="한식" style='width: 100%; height: 100%;'>
+        </a>
+      </div>
+      <div class="col-md-2 col-lg-2">
+        <a href='./shop/list.do?foodcategrpno=3'>
+        <img class="img-fluid" src="img/portfolio/japaneseFood.png" alt="일식/돈까스" style='width: 100%; height: 100%;'>
+        </a>
+      </div>
+      <div class="col-md-2 col-lg-2">
+      <a href='./shop/list.do?foodcategrpno=5'>
+        <img class="img-fluid" src="img/portfolio/pizza_WesternFood.png" alt="피자/양식" style='width: 100%; height: 100%;'>
+        </a>
+      </div>
+      <div class="col-md-2 col-lg-2">
+      <a href='./shop/list.do?foodcategrpno=2'>
+        <img class="img-fluid" src="img/portfolio/chineseFood.png" alt="중국집" style='width: 100%; height: 100%;'>
+        </a>
+      </div>
+      <div class="col-md-2 col-lg-2"></div>
+    </div>
+    <!-- 두번째 라인 종료 -->
+    <!-- 테스트코드 종료 -->
+    
+    
+    <div>
+    
+    </div>
   </div>
  
 <jsp:include page="/menu/bottom.jsp" flush='false' />
